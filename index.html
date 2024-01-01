@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "style.css"/>
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+</head>
+<body>
+  <div class="topnav" id="topnavv">
+    <a href="#home" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="search">
+    <h1>Honolulu Control Facility Prefered Routing</h1>
+    <div class="filter">
+      <label>
+        <span>From:</span>
+        <select name="from" id="from" onchange="from()">
+        </select>
+      </label>
+      <label>
+        To:
+        <select name="to" id="to" onchange="to()">
+        </select>
+      </label>
+      <label>
+        Arriving Runway:
+        <select name="runway" id="runway" onchange="runway()">
+        </select>
+      </label>
+      <button class="button" role="button" onclick="search()">Search</button>
+    </div>
+  </div>
+  <div id="products"></div>
+</body>
+</html>
+
+
+
