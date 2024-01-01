@@ -1,0 +1,43 @@
+const optionList = ['All','PLA','ABS','TPU','PETG','NYLON','MakerBot Tough PLA','ANYCUBIC UV RESIN'];
+const optionList2 = ['All','Beginner','Intermediate','Advanced'];
+
+function hamburger() {
+  var x = document.getElementById("topnavv");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else { 
+    x.className = "topnav";
+  }
+}
+
+function level(){
+  localStorage.setItem('level', document.getElementById('level').value)
+}
+function filament(){
+  localStorage.setItem('filament', document.getElementById('filament').value)
+}
+function currency(value){
+  localStorage.setItem('currency', value)
+}
+
+function setSelectValueFromLocalStorage(selectId, key) {
+  const select = document.getElementById(selectId);
+  const value = localStorage.getItem(key);
+  if (value) {
+    select.value = value;
+  }
+}
+
+
+
+window.onload = function() {
+  optionList.map((item)=>{
+    document.getElementById('filament').innerHTML += `<option value='${item}'>${item}</option>`;
+  })
+  optionList2.map((item)=>{
+    document.getElementById('level').innerHTML += `<option value='${item}'>${item}</option>`;
+  })
+  setSelectValueFromLocalStorage('level', 'level');
+  setSelectValueFromLocalStorage('filament', 'filament');
+  setSelectValueFromLocalStorage('currency', 'currency');
+};
